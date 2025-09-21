@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Basics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --pink: #FF8DA1;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: var(--pink);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #FFFFFF;
+      text-align: center;
+      font-size: clamp(2rem, 6vw, 4rem);
+      margin: 24px 0;
+    }
+
+    .shops {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 16px 24px;
+    }
+
+    figure {
+      margin: 0;
+      text-align: center;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    figcaption a {
+      display: inline-block;
+      margin-top: 8px;
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+
+    hr {
+      border: 0;
+      border-top: 2px solid #FFFFFF;
+      margin: 24px 0;
+      width: 100%;
+    }
+
+    footer {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-style: italic;
+      text-align: right;
+      padding: 0 16px 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>bruh @%</h1>
+  <section class="shops">
+    <figure>
+      <img src="https://m.media-amazon.com/images/I/51HCHFclmmL.jpg" alt="Online shop 1">
+      <figcaption><a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer">Amazon</a>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="https://play-lh.googleusercontent.com/E97ScgUW_lCtXuHEeL_prk5RbwzJC__6Vr9FA-kVYsmGG_xhYEERvolVcNQP8ebj0Rq4" alt="Online shop 2">
+      <figcaption><a href="https://www.ebay.com/" target="_blank" rel="noopener noreferrer">eBay</a></figcaption>
+    </figure>
+  </section>
+  <hr>
+  <footer>&copy; csuwanpi 2025</footer>
+</body>
+</html>
