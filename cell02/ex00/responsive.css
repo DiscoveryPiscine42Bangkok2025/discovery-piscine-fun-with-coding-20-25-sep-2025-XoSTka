@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+
+table.responsive {
+    width: 100vw;
+    height: 100vh;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+
+td {
+    border: 2px solid #8b8b8b;
+    padding: 2vw;
+    vertical-align: middle;
+    text-align: left;
+    overflow-wrap: anywhere;
+    min-width: 0;
+    font: 600 clamp(12px, 2.2vw, 22px)/1.4 system-ui, sans-serif;
+    color: #555;
+}
+
+
+.left {
+    background: #b7c06a;
+}
+
+.right {
+    background: #f5b9a9;
+}
+
+
+@media (max-width: 480px) {
+    td {
+        padding: 3vw;
+    }
+}
