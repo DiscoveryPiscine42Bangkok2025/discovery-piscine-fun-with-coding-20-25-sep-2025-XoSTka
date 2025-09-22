@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Responsive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    table {
+      width: 100vw;
+      height: 100vh;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    td {
+      border: 2px solid #8b8b8b;
+      padding: 2vw;
+      vertical-align: middle;
+      text-align: left;
+      overflow-wrap: anywhere;
+      min-width: 0;
+      font-weight: 600;
+      font-size: clamp(12px, 2.2vw, 22px);
+      color: #555;
+    }
+
+    .left {
+      background: #b7c06a;
+    }
+
+    .right {
+      background: #f5b9a9;
+    }
+
+
+    @media (max-width: 480px) {
+      td {
+        padding: 3vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td class="left">First cell</td>
+      <td class="right">Second cell</td>
+    </tr>
+  </table>
+</body>
+
+</html>
