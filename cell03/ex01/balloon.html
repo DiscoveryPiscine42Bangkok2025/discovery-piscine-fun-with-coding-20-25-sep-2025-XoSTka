@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explode this balloon</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+
+      background: #f6f7fb;
+      font-family: system-ui, sans-serif;
+      user-select: none;
+    }
+
+    #balloon {
+      width: 200px;
+      height: 200px;
+
+      border-radius: 50%;
+
+      background: red;
+
+      box-shadow: 0 10px 26px rgba(0, 0, 0, .15);
+      transition: background-color .12s ease;
+
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="balloon" aria-label="balloon" role="button" tabindex="0"></div>
+
+  <script>
+    const balloon = document.getElementById('balloon');
+
+
+    let size = 200;
+    const MIN = 200, MAX = 420;
+    const colors = ['red', 'green', 'blue'];
+    let ci = 0;
+
+    function apply() {
+      balloon.style.width = `${size}px`;
+      balloon.style.height = `${size}px`;
+      balloon.style.backgroundColor = colors[ci];
+    }
+
+
+    balloon.addEventListener('click', () => {
+      size += 10;
+      if (size > MAX) {
+        size = MIN;
+        ci = 0;
+      } else {
+        ci = (ci + 1) % colors.length;
+      }
+      apply();
+    });
+
+
+    balloon.addEventListener('mouseleave', () => {
+      size = Math.max(MIN, size - 5);
+      ci = (ci - 1 + colors.length) % colors.length;
+      apply();
+    });
+
+
+    balloon.addEventListener('keydown', (e) => {
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        balloon.click();
+      }
+    });
+
+    apply(); 
+  </script>
+</body>
+
+</html>
