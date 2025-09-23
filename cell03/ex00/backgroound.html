@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Change background</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: start start;
+      padding: 24px;
+      background: #fff;
+      font-family: system-ui, sans-serif;
+    }
+
+    button {
+      padding: 8px 12px;
+      font-size: 14px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      background: #f3f3f3;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e9e9e9;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="changer" type="button">Click me!</button>
+
+  <script>
+
+    const btn = document.getElementById('changer');
+    function randomColor() {
+      const h = Math.floor(Math.random() * 360);
+      const s = 70;
+      const l = 40;
+      return `hsl(${h} ${s}% ${l}%)`;
+    }
+    btn.addEventListener('click', () => {
+      document.body.style.backgroundColor = randomColor();
+    });
+  </script>
+</body>
+
+</html>

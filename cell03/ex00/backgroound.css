@@ -1,0 +1,27 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    place-items: start start;
+    padding: 24px;
+    background: #ffffff;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+
+#changer {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background: #f3f3f3;
+    cursor: pointer;
+}
+
+#changer:hover {
+    background: #e9e9e9;
+}
