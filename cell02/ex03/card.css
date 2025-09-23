@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.card {
+    background-color: white;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-align: center;
+
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding: 20px;
+}
+
+.profile-pic {
+    width: 80%;
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+
+.info-table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+.info-table td {
+    padding: 5px 0;
+}
+
+.login {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.description, .location {
+    color: gray;
+    font-size: 14px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons .icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.contact-btn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
