@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>It's over 9000 (jQuery)</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            padding: 20px;
+        }
+
+        input,
+        select,
+        button {
+            font: inherit;
+            padding: 6px 8px;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="num1" name="num1" placeholder="Number 1" />
+    <select name="operator" id="operator">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+        <option>%</option>
+    </select>
+    <input type="text" id="num2" name="num2" placeholder="Number 2" />
+    <button id="tryme" type="button">Try me</button>
+
+    <!-- jQuery (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+
+        setInterval(function () {
+            alert("Please, use me...");
+        }, 30000);
+
+
+        function calc() {
+            var num1 = parseFloat($('#num1').val());
+            var num2 = parseFloat($('#num2').val());
+            var op = $('#operator').val();
+            var answer = 0;
+
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert('Error');
+                return;
+            }
+            if (num1 < 0 || num2 < 0) {
+                alert('Error');
+                return;
+            }
+
+            switch (op) {
+                case '+':
+                    answer = num1 + num2;
+                    break;
+                case '-':
+                    answer = num1 - num2;
+                    break;
+                case '*':
+                    answer = num1 * num2;
+                    break;
+                case '/':
+
+                    answer = num1 / num2;
+                    if (num2 == 0) {
+                        alert("It's over 9000!");
+                        console.log(answer);
+                        return;
+                    }
+                    break;
+                case '%':
+
+                    answer = num1 % num2;
+                    if (num2 == 0) {
+                        alert("It's over 9000!");
+                        console.log(answer);
+                        return;
+                    }
+                    break;
+                default:
+                    answer = 'Error';
+            }
+
+            alert(answer);
+            console.log(answer);
+        }
+
+
+        $(function () {
+            $('#tryme').on('click', calc);
+            $('#num1, #num2').on('keypress', function (e) {
+                if (e.key === 'Enter') calc();
+            });
+        });
+    </script>
+</body>
+
+</html>
