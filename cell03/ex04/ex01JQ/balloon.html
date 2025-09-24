@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Explode this balloon (jQuery)</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            background: #f6f7fb;
+            font-family: system-ui, sans-serif;
+            user-select: none;
+        }
+
+        #balloon {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: red;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, .15);
+            transition: background-color .12s ease;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="balloon" aria-label="balloon" role="button" tabindex="0"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            //
+            var size = 200;
+            var MIN = 200, MAX = 420;
+            var colors = ['red', 'green', 'blue'];
+            var ci = 0;
+
+            function apply() {
+                $('#balloon')
+                    .css({ width: size + 'px', height: size + 'px', backgroundColor: colors[ci] });
+            }
+
+
+            $('#balloon').on('click', function () {
+                size += 10;
+                if (size > MAX) {
+                    size = MIN;
+                    ci = 0;
+                } else {
+                    ci = (ci + 1) % colors.length;
+                }
+                apply();
+            });
+
+
+            $('#balloon').on('mouseleave', function () {
+                size = Math.max(MIN, size - 5);
+                ci = (ci - 1 + colors.length) % colors.length;
+                apply();
+            });
+
+
+            $('#balloon').on('keydown', function (e) {
+                if (e.key === ' ' || e.key === 'Enter') {
+                    e.preventDefault();
+                    $(this).trigger('click');
+                }
+            });
+
+            apply();
+        });
+    </script>
+</body>
+
+</html>
